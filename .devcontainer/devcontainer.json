@@ -1,0 +1,14 @@
+{
+  "name": "Java Spring Microservices",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": true,
+      "installGradle": false
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "cd patient-service && mvn clean install -DskipTests",
+  "forwardPorts": [4000, 5432, 9092, 9094]
+}
